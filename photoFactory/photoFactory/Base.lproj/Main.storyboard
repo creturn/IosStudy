@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8NL-B8-Lh2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="u4L-hB-5iQ">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="8NL-B8-Lh2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zWo-j5-c3C">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="VFD-Nh-bqR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bfj-uY-lqN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-536" y="174"/>
+        </scene>
+        <!--View Controller - 图片处理-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="CRNViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="arw-nd-u2z"/>
+                        <viewControllerLayoutGuide type="bottom" id="G8W-ve-twk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qlh-xv-0Tt">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" id="VFw-GM-3Qu">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fLW-bC-NX8">
+                                            <rect key="frame" x="16" y="6" width="73" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="打开相机">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onclick_open_camera:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6YM-px-zvb"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="zm0-fi-NA5">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8Ek-JF-uax">
+                                            <rect key="frame" x="99" y="6" width="73" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="打开相册">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onclick_open_photolib:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vt2-rq-1Ft"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="7vf-1v-Wr6">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="29g-Zk-aw5">
+                                            <rect key="frame" x="182" y="6" width="73" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="图片美化">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onclick_photo_beaut:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IBs-bM-Lvs"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="gRt-Op-DTu">
+                                <rect key="frame" x="0.0" y="64" width="320" height="412"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gRt-Op-DTu" firstAttribute="leading" secondItem="Qlh-xv-0Tt" secondAttribute="leading" id="0NH-uQ-Wjq"/>
+                            <constraint firstAttribute="trailing" secondItem="Qlh-xv-0Tt" secondAttribute="trailing" id="2zv-zC-yiA"/>
+                            <constraint firstAttribute="bottom" secondItem="Qlh-xv-0Tt" secondAttribute="bottom" id="Lbz-x8-CrV"/>
+                            <constraint firstItem="Qlh-xv-0Tt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="PVM-SB-IHX"/>
+                            <constraint firstAttribute="bottom" secondItem="Qlh-xv-0Tt" secondAttribute="bottom" id="ZFY-6k-vv2"/>
+                            <constraint firstItem="gRt-Op-DTu" firstAttribute="trailing" secondItem="Qlh-xv-0Tt" secondAttribute="trailing" id="aqX-Xk-cVd"/>
+                            <constraint firstItem="gRt-Op-DTu" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="64" id="gTc-lU-Vbv"/>
+                            <constraint firstItem="Qlh-xv-0Tt" firstAttribute="top" secondItem="gRt-Op-DTu" secondAttribute="bottom" constant="48" id="zrW-Sx-SEs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="图片处理" id="3ZK-Tv-3kn"/>
+                    <connections>
+                        <outlet property="imgView" destination="gRt-Op-DTu" id="e3y-ls-1XX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-59" y="174"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
