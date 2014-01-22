@@ -7,7 +7,7 @@
 //
 
 #import "CRNViewController.h"
-
+#import <QuartzCore/QuartzCore.h>
 @interface CRNViewController ()
 
 @end
@@ -17,7 +17,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -25,7 +24,7 @@
     [super didReceiveMemoryWarning];
 }
 
-
+//打开摄像头
 - (IBAction)onclick_open_camera:(id)sender {
     UIImagePickerController *imgPicker = [[UIImagePickerController alloc] init];
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
@@ -36,7 +35,7 @@
     imgPicker.allowsEditing = YES;
     [self presentViewController:imgPicker animated:YES completion:nil];
 }
-
+//打开相册
 - (IBAction)onclick_open_photolib:(id)sender {
     UIImagePickerController *imgPicker = [[UIImagePickerController alloc] init];
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
@@ -47,8 +46,9 @@
     imgPicker.allowsEditing = YES;
     [self presentViewController:imgPicker animated:YES completion:nil];
 }
-
+//图片美化处理
 - (IBAction)onclick_photo_beaut:(id)sender {
+
 }
 
 //选择图像后回调方法
@@ -64,6 +64,8 @@
     [_imgView setImage:img];
     [picker dismissModalViewControllerAnimated:YES];
 }
+
+
 //对图片尺寸进行压缩--
 -(UIImage*)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize
 {
