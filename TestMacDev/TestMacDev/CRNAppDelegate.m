@@ -15,31 +15,44 @@
 {
     [_table setDelegate:self];
     [_table setDataSource:self];
-    dataSource = [[NSMutableArray alloc] init];
-    [dataSource addObject:[[NSArray alloc] initWithObjects:@"1",@"creturn",@"312434126",@"18627161840", nil]];
-    [dataSource addObject:[[NSArray alloc] initWithObjects:@"2",@"fly",@"424429722",@"13429802815", nil]];
-    [dataSource addObject:[[NSArray alloc] initWithObjects:@"3",@"aabb",@"429722",@"13429802815", nil]];
     
+    dataSource = [[NSMutableArray alloc] init];
+    NSColor *mColor = [NSColor colorWithDeviceRed:52 green:73 blue:94 alpha:0.98];
+    [_window setBackgroundColor:mColor];
 }
 
 - (IBAction)onclick_remove_login:(id)sender {
-    [_table reloadData];
-    [_box removeFromSuperview];
-    NSRect wRect = [_window.contentView frame];
-    _tableBox.frame = wRect;
-    [_window.contentView addSubview:_tableBox];
+    [dataSource removeAllObjects];
+    [dataSource addObject:[[NSArray alloc] initWithObjects:@"1",@"creturn",@"312434126",@"18627161840", nil]];
+    [dataSource addObject:[[NSArray alloc] initWithObjects:@"2",@"fly",@"424429722",@"13429802815", nil]];
+    [dataSource addObject:[[NSArray alloc] initWithObjects:@"3",@"aabb",@"429722",@"13429802815", nil]];
+    [_tableBox setTitle:@"用户列表"];
+    [self showList];
 }
 
 - (IBAction)onclick_add_login:(id)sender {
-    [_tableBox removeFromSuperview];
-    NSRect wRect = [_window.contentView frame];
-    _box.frame = wRect;
-    [_window.contentView addSubview:_box];
+    [self showLogin];
 }
 
+
+//禁止双击编辑
+- (BOOL)tableView:(NSTableView *)tableView shouldEditTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
+    return NO;
+}
+//行内容被选中时候调用
+- (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row{
+    NSArray *item = [dataSource objectAtIndex:row];
+    [_txt_id setStringValue:[item objectAtIndex:0]];
+    [_txt_name setStringValue:[item objectAtIndex:1]];
+    [_txt_qq setStringValue:item[2]]; //数组索引方式读取
+    [_txt_number setStringValue:item[3]];
+    return YES;
+}
+//初始化填充数据时候被调用
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
     return [[dataSource objectAtIndex:row] objectAtIndex:[[tableColumn identifier] intValue] - 1];
 }
+//统计数据内容行数总量时候被调用
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
     NSLog(@"Data count:%lu", (unsigned long)[dataSource count]);
     return dataSource.count;
@@ -82,7 +95,24 @@
     }
     
     [_table reloadData];
-    [_window.contentView addSubview:_tableBox];
+    [_tableBox setTitle:@"通讯录"];
+    [self showList];
 
+}
+//显示登陆框
+-(void)showLogin{
+    [_box setTitle:@"用户登陆"];
+    [_tableBox removeFromSuperview];
+    NSRect wRect = [_window.contentView frame];
+    _box.frame = wRect;
+    [_window.contentView addSubview:_box];
+}
+//显示列表
+-(void)showList{
+    [_table reloadData];
+    [_box removeFromSuperview];
+    NSRect wRect = [_window.contentView frame];
+    _tableBox.frame = wRect;
+    [_window.contentView addSubview:_tableBox];
 }
 @end

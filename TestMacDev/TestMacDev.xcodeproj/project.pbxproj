@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		99139712189B6BEA005A4A98 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99139711189B6BEA005A4A98 /* AddressBook.framework */; };
+		99139715189BE665005A4A98 /* CRNWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 99139714189BE665005A4A98 /* CRNWindow.m */; };
 		998E1D84188F8EF500E444B5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998E1D83188F8EF500E444B5 /* Cocoa.framework */; };
 		998E1D8E188F8EF500E444B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 998E1D8C188F8EF500E444B5 /* InfoPlist.strings */; };
 		998E1D90188F8EF500E444B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 998E1D8F188F8EF500E444B5 /* main.m */; };
@@ -33,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		99139711189B6BEA005A4A98 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		99139713189BE665005A4A98 /* CRNWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRNWindow.h; sourceTree = "<group>"; };
+		99139714189BE665005A4A98 /* CRNWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRNWindow.m; sourceTree = "<group>"; };
 		998E1D80188F8EF500E444B5 /* TestMacDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestMacDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		998E1D83188F8EF500E444B5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		998E1D86188F8EF500E444B5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -122,6 +125,8 @@
 				998E1D95188F8EF500E444B5 /* CRNAppDelegate.h */,
 				998E1D96188F8EF500E444B5 /* CRNAppDelegate.m */,
 				998E1D98188F8EF500E444B5 /* MainMenu.xib */,
+				99139713189BE665005A4A98 /* CRNWindow.h */,
+				99139714189BE665005A4A98 /* CRNWindow.m */,
 				998E1D9B188F8EF500E444B5 /* Images.xcassets */,
 				998E1D8A188F8EF500E444B5 /* Supporting Files */,
 			);
@@ -258,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				998E1D97188F8EF500E444B5 /* CRNAppDelegate.m in Sources */,
+				99139715189BE665005A4A98 /* CRNWindow.m in Sources */,
 				998E1D90188F8EF500E444B5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
