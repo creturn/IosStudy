@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>1BFA04E2-55B6-4A5E-82CC-F0CDA6382C89</string>
+	<string>027295C7-01B9-4C53-8C52-5AF91DEE623B</string>
 	<key>IDESourceControlProjectName</key>
-	<string>photoFactory</string>
+	<string>TestMacDev</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>BA729744-E7EB-4D11-9115-B3B67E290522</key>
 		<string>https://github.com/creturn/IosStudy.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>photoFactory/photoFactory.xcodeproj/project.xcworkspace</string>
+	<string>TestMacDev/TestMacDev.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>BA729744-E7EB-4D11-9115-B3B67E290522</key>
